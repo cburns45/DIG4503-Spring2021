@@ -11,9 +11,9 @@ Pass as an attribute firstName with your first name
 import React from 'react';
 
 class HomePage extends React.Component {
-    render(firstName){
+    render(){
         return(
-            firstName = <p>Connor</p>
+             <p>{this.props.attr}</p>
         );
     }
 }
