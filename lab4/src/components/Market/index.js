@@ -28,13 +28,15 @@ class Market extends React.Component{
 
                 <button onClick = {()=> {
                     const items = this.state.items;
-                    items.push(<MarketItem count = {0}/>);
+                    items.push(<MarketItem count = {items.length}/>);
                     this.setState({items: items});
-
-                    this.state.items.map(count => (
-                        <p key = {count}>{count}</p>
-                    ))
                 }}>Click here</button>
+
+                <div>
+                    {this.state.items.map((count, key) => {
+                         return <p key = {key}>{count}</p>
+                    })}
+                </div>
             </div>
         )
     }
