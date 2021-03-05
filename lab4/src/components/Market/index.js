@@ -12,6 +12,8 @@ Market (a class component) should:
 
 import React from 'react';
 import MarketItem from '../MarketItem';
+import Decrease from '../Decrease';
+import Clear from '../Clear';
 
 class Market extends React.Component{
     constructor(props){
@@ -30,7 +32,19 @@ class Market extends React.Component{
                     const items = this.state.items;
                     items.push(<MarketItem count = {items.length}/>);
                     this.setState({items: items});
-                }}>Click here</button>
+                }}>Add Item</button>
+
+                <button onClick = {()=> {
+                    const items = this.state.items;
+                    items.pop(<Decrease count = {items.length}/>);
+                    this.setState({items: items});
+                }}>Remove Item</button>
+
+                <button onClick = {()=> {
+                    const items = this.state.items;
+                    items.pop(<Clear count = {items.length = 0}/>);
+                    this.setState({items: items});
+                }}>Clear list</button>
 
                 <div>
                     {this.state.items.map((count, key) => {
