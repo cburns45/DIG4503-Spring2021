@@ -16,10 +16,10 @@ If search cannot be found, the route should respond with a JSON object, {search:
 
 import Express from "express";
 
-    const App = Express();
-    const port = 45030;
+const App = Express();
+const port = 45030;
 
-    const names = [
+const names = [
     "Cortney",
     "Dewayne",
     "Trenton",
@@ -32,42 +32,50 @@ import Express from "express";
     "Caterina",
     "Isa",
     "Marcela"
-    ];
+];
 
-    App.get("/people/:person", (req, res) => {
+App.get("/people/:person", (req, res) => {
 
-        let result = { name: "Not found!" };
+    let result = {
+        name: "Not found!"
+    };
 
-        names.forEach((value) => {
+    names.forEach((value) => {
 
-            if (req.params.person == value) {
-            result = { name: value };
-            }
-        });
-
-        res.json(result)
-    });
-
-    App.get("/search/:name", (req, res) => {
-
-        let result = { search: ["Not found!"] };
-
-        let arrayResult = [];
-
-        names.forEach((value) => {
-
-            if (value.includes(req.params.name)) {
-                arrayResult.push(value);
-            }
-        });
-
-            if (arrayResult.length > 0) {
-
-            result = { name: arrayResult };
+        if (req.params.person == value) {
+            result = {
+                name: value
+            };
         }
-
-        res.json(result);
     });
+
+    res.json(result)
+});
+
+App.get("/search/:name", (req, res) => {
+
+    let result = {
+        search: ["Not found!"]
+    };
+
+    let arrayResult = [];
+
+    names.forEach((value) => {
+
+        if (value.includes(req.params.name)) {
+            arrayResult.push(value);
+        }
+    });
+
+    if (arrayResult.length > 0) {
+
+        result = {
+            name: arrayResult
+        };
+    }
+
+    res.json(result);
+});
 
 
 App.listen(port, () => {
