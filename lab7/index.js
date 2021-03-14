@@ -58,19 +58,19 @@ App.get("/search/:name", (req, res) => {
         search: ["Not found!"]
     };
 
-    let arrayResult = [];
+    let nameResult = [];
 
     names.forEach((value) => {
 
         if (value.includes(req.params.name)) {
-            arrayResult.push(value);
+            nameResult.push(value);
         }
     });
 
-    if (arrayResult.length > 0) {
+    if (nameResult.length > 0) {
 
         result = {
-            name: arrayResult
+            name: nameResult
         };
     }
 
