@@ -29,8 +29,13 @@ App.put("/people/create", (req,res) => {
 //look for person
 App.get("/people/:person", (req,res) => {
     let person = req.params.person;
-    let result = d.readOne(person);
-    res.json(result);
+    d.readOne(person);
+    res.json({
+        person: person,
+        person: req.body
+    });
+
+    console.log(req.query.firstName, req.query.lastName, req.query.favoriteColor);
 });
 
 

@@ -24,32 +24,29 @@ class Database {
     }
 
     async createOne(person){
-        await this.collection.insertOne({
-            "firstName": "Connor",
-            "lastName": "Burns",
-            "favoriteColor": "Red"
-        });
-
-        this.names.push(person);
-        return {person: person};
+        if (this.collection != null){
+            let results = await this.collection.insertOne({
+                "firstName": "Connor",
+                "lastName": "Burns",
+                "favoriteColor": "Red"
+            });
+            
+            return {results};
+        }
     }
 
     async readOne(person){
-        await this.collection.findOne({
-            "firstName": "",
-            "lastName": "",
-            "favoriteColor": ""
-        })
+        if (this.collection != null){
+           let results = await this.collection.findOne({
+                "firstName": "",
+                "lastName": "",
+                "favoriteColor": ""
+            });
 
-        let result = {person: "Not Found!"};
+            let results = {person: "Not Found!"};
 
-        this.names.forEach(value => {
-            if(value == perosn){
-                result = {person: person}
-            }
-        });
-
-        return result;
+            return results;
+        }
     }
 
     close() {
