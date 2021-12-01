@@ -5,7 +5,7 @@ function Get (){
     const [search, setSearch] = useState('');
 
     const Searching = async ()=> {
-       const result = await Axios.get("http://localhost:45030/ConnorBurns/" + search)
+       const result = await Axios.get("http://localhost:45030/MovieLibrary/" + search)
 
         if (result != null){
             console.log(result.data);

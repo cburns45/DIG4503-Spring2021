@@ -8,7 +8,7 @@ function Update (){
     const [ISBN, setISBN] = useState("");
 
     const updateMovie = async () =>{
-        const result = await Axios.patch("http://localhost:45030/ConnorBurns/" + ISBN,{
+        const result = await Axios.patch("http://localhost:45030/MovieLibrary/" + ISBN,{
             "director": director,
             "title": title,
             "description": description,

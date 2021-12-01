@@ -8,7 +8,7 @@ function Put (){
     const [ISBN, setISBN] = useState("");
 
     const Add = async () =>{
-        const result = await Axios.put("http://localhost:45030/ConnorBurns/" + ISBN,{
+        const result = await Axios.put("http://localhost:45030/MovieLibrary/" + ISBN,{
             "director": director,
             "title": title,
             "description": description,

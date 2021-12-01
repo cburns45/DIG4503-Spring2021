@@ -10,7 +10,7 @@ App.use(CORS());
 
 d.connect();
 
-App.put('/ConnorBurns/:ISBN', async (req, res) => {
+App.put('/MovieLibrary/:ISBN', async (req, res) => {
     const ISBN = req.params.ISBN;
     const title = req.body.title;
     const author = req.body.author;
@@ -20,7 +20,7 @@ App.put('/ConnorBurns/:ISBN', async (req, res) => {
     res.json(result);
 });
 
-App.get('/ConnorBurns/:ISBN', async (req, res) => {
+App.get('/MovieLibrary/:ISBN', async (req, res) => {
     const ISBN = req.params.ISBN;
 
     const result = await d.readOne(ISBN)
@@ -30,7 +30,7 @@ App.get('/ConnorBurns/:ISBN', async (req, res) => {
 });
 
 
-App.patch('/ConnorBurns/:ISBN', async (req, res) => {
+App.patch('/MovieLibrary/:ISBN', async (req, res) => {
     const ISBN = req.params.ISBN;
 
     const title = req.body.title;
@@ -44,7 +44,7 @@ App.patch('/ConnorBurns/:ISBN', async (req, res) => {
 
 });
 
-App.delete('/ConnorBurns/:ISBN', async (req, res) => {
+App.delete('/MovieLibrary/:ISBN', async (req, res) => {
     const ISBN = req.params.ISBN;
 
     const result = await d.deleteOne(ISBN);

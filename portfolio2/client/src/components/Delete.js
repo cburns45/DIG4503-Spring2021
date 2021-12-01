@@ -5,7 +5,7 @@ function Delete (){
     const [search, setSearch] = useState('');
 
     const Deleting = async ()=> {
-       const result = await Axios.delete("http://localhost:45030/ConnorBurns/" + search)
+       const result = await Axios.delete("http://localhost:45030/MovieLibrary/" + search)
             console.log(result.data);
         
     }

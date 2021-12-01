@@ -1,15 +1,17 @@
 {
   "name": "portfolio2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"cd server && npm run server\" \"cd client && npm run start\""
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^6.0.2"
-  }
+    "concurrently": "^6.4.0"
+    
+  },
+  "description": ""
 }

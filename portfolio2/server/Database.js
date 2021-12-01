@@ -1,5 +1,5 @@
 import MongoClient from 'mongodb';
-const URL = 'mongodb+srv://ConnorBurns:cs2iR7sYoVimWnld@cluster0.yuzwq.mongodb.net';
+const URL = 'mongodb+srv://cburns45:Mugsy2017@cluster0.5lqza.mongodb.net/test';
 
 class Database {
     constructor(){
@@ -9,8 +9,8 @@ class Database {
     }
     async connect() {
         this.connection = await MongoClient.connect(URL, { useUnifiedTopology: true});
-        this.database = this.connection.db("portfolio2");
-        this.collection = this.database.collection("ConnorBurns");
+        this.database = this.connection.db("Movies");
+        this.collection = this.database.collection("MovieLibrary");
     }
 
     async createOne(movie, title, director, description) {
