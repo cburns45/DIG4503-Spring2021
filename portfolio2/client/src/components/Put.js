@@ -21,19 +21,25 @@ function Put (){
     return(
         <div>
             <h2>Save a Movie:</h2>
-            <input type="text" value= {director} onChange={(event) => {
-                setDirector(event.target.value);
+            <span>
+            <p>Director</p>
+            <input type="text" value= {director} onChange={(addDirector) => {
+                setDirector(addDirector.target.value);
             }} />
-            <input type="text" value= {title} onChange={(event) => {
-                setTitle(event.target.value);
+            <p>Movie Title</p>
+            <input type="text" value= {title} onChange={(addTitle) => {
+                setTitle(addTitle.target.value);
             }} />
-            <input type="text" value= {description} onChange={(event) => {
-                setDescription(event.target.value);
+            <p>Short description</p>
+            <input type="text" value= {description} onChange={(addDesc) => {
+                setDescription(addDesc.target.value);
             }} />
-            <input type="text" value= {ISBN} onChange={(event) => {
-                setISBN(event.target.value);
+            <p>List Number </p>
+            <input type="text" value= {ISBN} onChange={(addNum) => {
+                setISBN(addNum.target.value);
             }} />
-
+            </span>
+            
             <button onClick={() => {Add()}}>Add Movie</button>
             
         </div>
