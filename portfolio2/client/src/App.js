@@ -1,7 +1,7 @@
 import React from 'react';
 import Put from './components/Put.js';
 import Get from './components/Get.js';
-import Update from './components/Patch.js';
+// import Update from './components/Patch.js';
 import Delete from './components/Delete.js';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
       <Get />
 
-      <Update />
+      {/* <Update /> */}
 
       <Delete />
       

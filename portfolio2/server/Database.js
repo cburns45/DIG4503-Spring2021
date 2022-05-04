@@ -1,5 +1,5 @@
 import MongoClient from 'mongodb';
-const URL = 'mongodb+srv://cburns45:Mugsy2017@cluster0.5lqza.mongodb.net/test';
+const URL = 'mongodb+srv://cburns2545:Mugsy2017@cluster0.5lqza.mongodb.net/test';
 
 class Database {
     constructor(){
@@ -40,14 +40,14 @@ class Database {
     }
     
 
-    async updateOne(title, director, description, number) {
+    /* async updateOne(title, director, description, number) {
         if (this.collection != null){
             const result = await this.collection.updateOne({"title": title}, {$set: {"director": director}}, {"description": description}, {"number":number});
             return result;
         } else {
             return null;
         }
-    }
+    } */
 
     async deleteOne(movie) {
         if (this.collection != null){
